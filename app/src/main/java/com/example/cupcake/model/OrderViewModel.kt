@@ -1,6 +1,11 @@
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
+import androidx.lifecycle.ViewModel
+import java.text.NumberFormat
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class OrderViewModel : ViewModel() {
     private val _quantity = MutableLiveData<Int>(0)
@@ -25,5 +30,9 @@ class OrderViewModel : ViewModel() {
 
     fun setDate(pickupDate: String) {
         _date.value = pickupDate
+    }
+
+    fun hasNoFlavorSet(): Boolean {
+        return _flavor.value.isNullOrEmpty()
     }
 }
