@@ -20,6 +20,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".PickupFragment">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.cupcake.model.OrderViewModel" />
+
+        <variable
+            name="pickupFragment"
+            type="com.example.cupcake.PickupFragment" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -99,6 +109,7 @@
 
             <Button
                 android:id="@+id/next_button"
+                android:onClick="@{() -> pickupFragment.goToNextScreen()}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/side_margin"
